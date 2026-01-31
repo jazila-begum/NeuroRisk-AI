@@ -1,0 +1,11 @@
+import pandas as pd
+
+df = pd.read_excel(r"stroke.xlsx")
+unique_counts = df.nunique()
+print(unique_counts)
+for column in df.columns:
+    unique_values = df[column].unique() 
+    unique_count = df[column].nunique()  
+    print(f"Column: {column}")
+    print(f"Unique Count: {unique_count}")
+    print(f"Unique Values: {unique_values}\n")
